@@ -35,7 +35,7 @@ module.exports = function(app) {
   };
     console.log(newNotes);
     db.push(newNotes)
-    fs.writeFile("../Develop/db/db,json", JSON.stringify(db), function (err) {
+    fs.writeFile("./db/db.json", JSON.stringify(db), function (err) {
         if (err) throw err;
         return res.json(db);
     })
@@ -52,7 +52,7 @@ module.exports = function(app) {
         obj.id = i + 1
     });
 
-    fs.writeFile("./Develop/db/db.json", JSON.stringify(db), function() {
+    fs.writeFile("./db/db.json", JSON.stringify(db), function() {
         res.json(db);
     })
   });
